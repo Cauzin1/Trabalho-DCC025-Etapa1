@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
+//Thomás Sousa Causin Alves 201835040
+//Iago Mazzoni 202065568c
 
 package ufjf.dcc025.trabalhodcc025parte1;
 
