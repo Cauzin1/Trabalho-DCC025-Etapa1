@@ -9,7 +9,7 @@ package ufjf.dcc025.trabalhodcc025parte1;
  * @author Cauzin
  */
 public class Admin {
-    private String Admin;
+    private String admin;
     private String senha;
     
 }
