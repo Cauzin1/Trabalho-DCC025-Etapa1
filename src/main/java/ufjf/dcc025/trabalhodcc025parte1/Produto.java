@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class Produto {
     Scanner teclado = new Scanner(System.in);
+    
     private String nomeProd;
     private int precoCusto;
     private int precoVenda;
