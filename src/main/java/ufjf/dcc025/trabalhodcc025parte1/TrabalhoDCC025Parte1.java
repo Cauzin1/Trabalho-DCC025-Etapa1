@@ -4,83 +4,81 @@
  */
 //Thomás Sousa Causin Alves 201835040
 //Iago Mazzoni 202065568c
-
 package ufjf.dcc025.trabalhodcc025parte1;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author iagom
  */
 public class TrabalhoDCC025Parte1 {
 
-    
     public static void main(String[] args) {
+        String senha;
+        System.out.println("Escolha a senha do administrador: ");
         Scanner teclado = new Scanner(System.in);
+        senha = teclado.nextLine();
+        Admin admin = new Admin(senha);
+        System.out.println("Escolha a senha do cliente: ");
+        senha = teclado.nextLine();
+        Cliente cliente = new Cliente(senha);
+
         Produto prod1 = new Produto();
         Produto prod2 = new Produto();
         Produto prod3 = new Produto();
+        //Produto prod4 = new Produto();
+
+        admin.NovoProd(prod1);
+        admin.NovoProd(prod2);
+        admin.NovoProd(prod3);
+        //admin.NovoProd(prod4);
+
+        admin.VerProds();
+
+        try {
+            admin.RemoveProd();
+        } catch (NumProdInvalido ex) {
+            Logger.getLogger(TrabalhoDCC025Parte1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        admin.VerProds();
         
-        System.out.println(" Digite a remessa do produto: ");
-        String remessa = teclado.nextLine();
-        prod1.setRemessaProd(remessa);
+        try {
+            admin.alteraPrecoVenda();
+        } catch (NumProdInvalido ex) {
+            Logger.getLogger(TrabalhoDCC025Parte1.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        System.out.println(" Digite o nome do produto: ");
-        String nome = teclado.nextLine();
-        prod1.setNomeProd(nome);
+        try {
+            admin.alteraPrecoCusto();
+        } catch (NumProdInvalido ex) {
+            Logger.getLogger(TrabalhoDCC025Parte1.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        System.out.println(" Digite o tamanho do produto: ");
-        String tam = teclado.nextLine();
-        prod1.setTamProd(tam);
+        try {
+            admin.alteraTamProd();
+        } catch (NumProdInvalido ex) {
+            Logger.getLogger(TrabalhoDCC025Parte1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+        cliente.AdicionaCarrinho(prod3);
+        cliente.AdicionaCarrinho(prod2);
+        cliente.VerProds();
+        cliente.valorTotal();
+        try {
+            cliente.RemoveDoCarrinho();
+        } catch (NumProdInvalido ex) {
+            Logger.getLogger(TrabalhoDCC025Parte1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        cliente.VerProds();
+        cliente.valorTotal();
+        cliente.ApagarCarrinho();
+        cliente.AdicionaCarrinho(prod1);
+        cliente.VerProds();
+        cliente.valorTotal();
         
-        System.out.println(" Digite o preco de custo do produto: ");
-        int custo = teclado.nextInt();
-        prod1.setPrecoCusto(custo);
-        
-        System.out.println(" Digite preco de venda do produto: ");
-        int venda = teclado.nextInt();
-        prod1.setPrecoVenda(venda);
-        
-        
-        
-//        System.out.println(" Digite o nome do produto: ");
-//        String nome2 = teclado.nextLine();
-//        prod2.setNomeProd(nome2);
-//        System.out.println(" Digite o tamanho do produto: ");
-//        String tam2 = teclado.next();
-//        prod2.setTamProd(tam2);
-//        System.out.println(" Digite o preco de custo do produto: ");
-//        int custo2 = teclado.nextInt();
-//        prod2.setPrecoCusto(custo2);
-//        System.out.println(" Digite preco de venda do produto: ");
-//        int venda2 = teclado.nextInt();
-//        prod2.setPrecoVenda(venda2);
-//        System.out.println(" Digite a remessa do produto: ");
-//        String remessa2 = teclado.nextLine();
-//        prod2.setRemessaProd(remessa2);
-//        
-//        System.out.println(" Digite o nome do produto: ");
-//        String nome3 = teclado.nextLine();
-//        prod3.setNomeProd(nome3);
-//        System.out.println(" Digite o tamanho do produto: ");
-//        String tam3 = teclado.next();
-//        prod3.setTamProd(tam3);
-//        System.out.println(" Digite o preco de custo do produto: ");
-//        int custo3 = teclado.nextInt();
-//        prod3.setPrecoCusto(custo3);
-//        System.out.println(" Digite preco de venda do produto: ");
-//        int venda3 = teclado.nextInt();
-//        prod3.setPrecoVenda(venda3);
-//        System.out.println(" Digite a remessa do produto: ");
-//        String remessa3 = teclado.nextLine();
-//        prod3.setRemessaProd(remessa3);
-        
-        System.out.println(prod1.getNomeProd());
-        System.out.println(prod1.getPrecoCusto());
-        System.out.println(prod1.getPrecoVenda());
-        System.out.println(prod1.getTamProd());
-        System.out.println(prod1.getRemessaProd());
-//        System.out.println(prod2.getNomeProd());
-//        System.out.println(prod3.getNomeProd());
     }
 }
