@@ -14,6 +14,7 @@ import java.util.logging.Logger;
  *
  * @author Cauzin
  */
+
 public class Admin extends User {
 
     public Admin(String senha) {

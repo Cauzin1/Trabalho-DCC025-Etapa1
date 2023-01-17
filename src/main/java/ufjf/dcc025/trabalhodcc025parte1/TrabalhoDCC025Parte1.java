@@ -1,24 +1,38 @@
+package ufjf.dcc025.trabalhodcc025parte1;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 //Thomás Sousa Causin Alves 201835040
 //Iago Mazzoni 202065568c
-package ufjf.dcc025.trabalhodcc025parte1;
+
+
+
+//https://github.com/Cauzin1/Trabalho-DCC025-Etapa1.git
+
+
 
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
 
 /**
  *
  * @author iagom
  */
 public class TrabalhoDCC025Parte1 {
+    
 
     public static void main(String[] args) {
+
         String senha;
         System.out.println("Escolha a senha do administrador: ");
+
+
+
         Scanner teclado = new Scanner(System.in);
         senha = teclado.nextLine();
         Admin admin = new Admin(senha);
@@ -81,4 +95,5 @@ public class TrabalhoDCC025Parte1 {
         cliente.valorTotal();
         
     }
+
 }
